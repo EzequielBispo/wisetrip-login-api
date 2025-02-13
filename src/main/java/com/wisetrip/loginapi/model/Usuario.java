@@ -13,6 +13,12 @@ public class Usuario {
 
     @Id
     private int id_usuario;
+    
+    @NorBlank
+    private String nm_usuario;
+
+    @NotBlank
+    private String sb_usuario;
 
     @NotBlank
     private String ds_email;
