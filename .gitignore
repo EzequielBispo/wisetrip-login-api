@@ -9,6 +9,7 @@ mvnw
 \.mvn
 mvnw.cmd
 !**/src/main/resources/**
+application.properties
 
 ### STS ###
 .apt_generated
