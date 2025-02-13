@@ -8,7 +8,7 @@ target/
 mvnw
 \.mvn
 mvnw.cmd
-src/main/resources/application.properties
+!**/src/main/resources/**
 
 ### STS ###
 .apt_generated
