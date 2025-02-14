@@ -16,7 +16,7 @@ public class UsuarioService {
     }
 
     public Usuario setUsuario(Usuario usuario) {
-        return repository.save(cliente);
+        return repository.save(usuario);
     }
 
     public Usuario deleteUsuario(int id) {
