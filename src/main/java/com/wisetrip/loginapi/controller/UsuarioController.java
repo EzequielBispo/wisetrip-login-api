@@ -1,6 +1,6 @@
 package com.wisetrip.loginapi.controller;
 
-import com.wisetrip.loginapi.exceptions.ClientNotFoundException;
+import com.wisetrip.loginapi.exceptions.UsuarioNotFoundException;
 import com.wisetrip.loginapi.model.Usuario;
 import com.wisetrip.loginapi.service.UsuarioService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -34,7 +34,7 @@ public class UsuarioController {
     public EntityModel<Usuario> buscarId(@PathVariable int id) {
         Usuario usuario = service.getUsuario(id);
         if (usuario == null) {
-            throw new ClientNotFoundException(id);
+            throw new UsuarioNotFoundException(id);
         }
         EntityModel<Usuario> resource = EntityModel.of(usuario);
         resource.add(linkTo(methodOn(UsuarioController.class).buscarId(id)).withSelfRel());
@@ -73,7 +73,7 @@ public class UsuarioController {
     public ResponseEntity<?> deletar(@PathVariable int id) {
         Usuario usuario = service.getUsuario(id);
         if (usuario == null) {
-            throw new ClientNotFoundException(id);
+            throw new UsuarioNotFoundException(id);
         }
         service.deleteUsuario(id);
         return ResponseEntity.noContent().build();
@@ -89,7 +89,7 @@ public class UsuarioController {
     public ResponseEntity<EntityModel<Usuario>> atualizar(@PathVariable int id, @RequestBody Usuario usuario) {
         Usuario existente = service.getUsuario(id);
         if (existente == null) {
-            throw new ClientNotFoundException(id);
+            throw new UsuarioNotFoundException(id);
         }
         usuario.setId_usuario(id);
         Usuario updatedUsuario = service.save(usuario);
