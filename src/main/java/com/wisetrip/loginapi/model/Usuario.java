@@ -14,7 +14,7 @@ public class Usuario {
     @Id
     private int id_usuario;
     
-    @NorBlank
+    @NotBlank
     private String nm_usuario;
 
     @NotBlank
