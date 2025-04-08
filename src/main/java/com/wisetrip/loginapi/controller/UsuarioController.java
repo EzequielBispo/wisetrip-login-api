@@ -16,6 +16,8 @@ import org.springframework.hateoas.EntityModel;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.linkTo;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.methodOn;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/usuarios")
 @Tag(name = "Usuario")
@@ -23,6 +25,14 @@ public class UsuarioController {
 
     @Autowired
     UsuarioService service;
+
+    @GetMapping("/")
+    @Operation(
+            summary = "Listar todos os usuarios",
+            description = "Retorna lista de todos os usuarios")
+    public List<Usuario> getUsuarios() {
+        return service.getUsuarios();
+    }
 
     // GET
     @GetMapping("/{id}")
