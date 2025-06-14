@@ -7,9 +7,9 @@ services:
     ports:
       - 8080:8080
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://82.25.71.199:3306/wisetripdb?useSSL=false&serverTimezone=UTC
-      SPRING_DATASOURCE_USERNAME: wisetrip-suser 
-      SPRING_DATASOURCE_PASSWORD: CwTxbgCs$%33@R
+      SPRING_DATASOURCE_URL: $SPRING_DATASOURCE_URL
+      SPRING_DATASOURCE_USERNAME: $SPRING_DATASOURCE_USERNAME
+      SPRING_DATASOURCE_PASSWORD: $SPRING_DATASOURCE_PASSWORD
       SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQLDialect
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
     restart: never
