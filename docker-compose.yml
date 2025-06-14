@@ -7,10 +7,10 @@ services:
     ports:
       - 8080:8080
     environment:
-      SPRING_JPA_HIBERNATE_DDL_AUTO: update
-      socketFactory: com.google.cloud.sql.mysql.SocketFactory
-      cloudSqlInstance: $CLOUD_SQL_INSTANCE
-      user: $CLOUD_SQL_USER
-      password: $CLOUD_SQL_PASSWORD
+      spring.cloud.gcp.sql.database-name: wisetrip-db
+      spring.cloud.gcp.sql.instance-connection-name: gcp-learn-459823:us-central1:wisetrip-database
+
+
+
     restart: never
 
