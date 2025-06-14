@@ -7,10 +7,6 @@ services:
     ports:
       - 8080:8080
     environment:
-      SPRING_DATASOURCE_URL: $SPRING_DATASOURCE_URL
-      SPRING_DATASOURCE_USERNAME: $SPRING_DATASOURCE_USERNAME
-      SPRING_DATASOURCE_PASSWORD: $SPRING_DATASOURCE_PASSWORD
-      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQLDialect
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
       socketFactory: com.google.cloud.sql.mysql.SocketFactory
       cloudSqlInstance: $CLOUD_SQL_INSTANCE
