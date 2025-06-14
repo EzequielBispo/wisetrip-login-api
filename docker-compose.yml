@@ -12,5 +12,9 @@ services:
       SPRING_DATASOURCE_PASSWORD: $SPRING_DATASOURCE_PASSWORD
       SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.MySQLDialect
       SPRING_JPA_HIBERNATE_DDL_AUTO: update
+      socketFactory: com.google.cloud.sql.mysql.SocketFactory
+      cloudSqlInstance: $CLOUD_SQL_INSTANCE
+      user: $CLOUD_SQL_USER
+      password: $CLOUD_SQL_PASSWORD
     restart: never
 
